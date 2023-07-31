@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMP算法", "KMP算法\KMP�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用栈实现队列", "用栈实现队列\用栈实现队列.vcxproj", "{FA14A037-EE3C-4387-8305-D9D3F64FC41D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用队列实现栈", "用队列实现栈\用队列实现栈.vcxproj", "{48210E1B-974E-4649-AE7A-AA02C3764870}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x64.Build.0 = Release|x64
 		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x86.ActiveCfg = Release|Win32
 		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x86.Build.0 = Release|Win32
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Debug|x64.ActiveCfg = Debug|x64
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Debug|x64.Build.0 = Debug|x64
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Debug|x86.ActiveCfg = Debug|Win32
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Debug|x86.Build.0 = Debug|Win32
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x64.ActiveCfg = Release|x64
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x64.Build.0 = Release|x64
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x86.ActiveCfg = Release|Win32
+		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

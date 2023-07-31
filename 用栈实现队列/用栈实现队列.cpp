@@ -12,6 +12,7 @@ public:
     {
         instack.push(x);
     };
+    //出队
     int pop() 
     {
         if (outstack.empty()) {
@@ -30,6 +31,33 @@ public:
         }
 
     };
+    //返回队列头元素
+    int peek() 
+    {
+        if (outstack.empty()) {
+            while (!instack.empty())
+            {
+                int i = instack.top();
+                instack.pop();
+                outstack.push(i);
+            }
+        }
+        if (!outstack.empty())
+        {
+            int result = outstack.top();
+            return result;
+        }
+    }
+    //队列是否为空
+    bool empty() 
+    {
+        if (outstack.empty() && instack.empty())
+        {
+            return true;
+        }
+        else
+            return false;
+    }
 private:
     stack<int> instack;
     stack<int> outstack;
