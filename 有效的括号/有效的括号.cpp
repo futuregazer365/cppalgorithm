@@ -20,11 +20,11 @@ public:
             if (s[i] == '(') st.push(')');
             else if (s[i] == '[') st.push(']');
             else if (s[i] == '{') st.push('}');
-            else if (st.empty() || st.top() != s[i]) return false;
+            else if (st.empty() || st.top() != s[i]) return false;//2.3类型
             else if (s[i] == st.top())   st.pop();
 
         }
-        return true;
+        return st.empty();//1类型
     }
 private:
     stack<char> st;
@@ -33,7 +33,6 @@ int main()
 {
     Solution s;
     cout << s.isLegalBracket("(((())))(){}}}}") << endl;
-    std::cout << "Hello World!\n";
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
