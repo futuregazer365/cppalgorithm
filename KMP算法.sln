@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMP算法", "KMP算法\KMP算法.vcxproj", "{7AC62240-FF65-4A12-A106-739E12001C98}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用栈实现队列", "用栈实现队列\用栈实现队列.vcxproj", "{FA14A037-EE3C-4387-8305-D9D3F64FC41D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Debug|x64.ActiveCfg = Debug|x64
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Debug|x64.Build.0 = Debug|x64
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Debug|x86.ActiveCfg = Debug|Win32
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Debug|x86.Build.0 = Debug|Win32
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Release|x64.ActiveCfg = Release|x64
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Release|x64.Build.0 = Release|x64
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Release|x86.ActiveCfg = Release|Win32
+		{7AC62240-FF65-4A12-A106-739E12001C98}.Release|x86.Build.0 = Release|Win32
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Debug|x64.ActiveCfg = Debug|x64
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Debug|x64.Build.0 = Debug|x64
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Debug|x86.ActiveCfg = Debug|Win32
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Debug|x86.Build.0 = Debug|Win32
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x64.ActiveCfg = Release|x64
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x64.Build.0 = Release|x64
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x86.ActiveCfg = Release|Win32
+		{FA14A037-EE3C-4387-8305-D9D3F64FC41D}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20EBBBCC-A62B-4041-A8F3-E65E1CA5AB47}
+	EndGlobalSection
+EndGlobal
