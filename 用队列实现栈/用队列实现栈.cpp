@@ -18,7 +18,7 @@ public:
         if(!queue1.empty()){
             if (queue1.size() > 1)
             {
-                rsize_t times = queue1.size() - 1;
+                unsigned __int64 times = queue1.size() - 1;
                 while (times)
                 {
                     int temp = queue1.front();
@@ -39,6 +39,12 @@ public:
             return INT_MAX;
         }
         return queue1.back();
+    }
+    //栈是否为空
+    bool empty() 
+    {
+        if (queue1.empty())return true;
+        else return false;
     }
 private:
     queue<int> queue1;

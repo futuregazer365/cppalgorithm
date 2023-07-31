@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用栈实现队列", "用�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用队列实现栈", "用队列实现栈\用队列实现栈.vcxproj", "{48210E1B-974E-4649-AE7A-AA02C3764870}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "有效的括号", "有效的括号\有效的括号.vcxproj", "{881A854A-216F-43AA-B054-6EB0C989F359}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x64.Build.0 = Release|x64
 		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x86.ActiveCfg = Release|Win32
 		{48210E1B-974E-4649-AE7A-AA02C3764870}.Release|x86.Build.0 = Release|Win32
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Debug|x64.ActiveCfg = Debug|x64
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Debug|x64.Build.0 = Debug|x64
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Debug|x86.ActiveCfg = Debug|Win32
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Debug|x86.Build.0 = Debug|Win32
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Release|x64.ActiveCfg = Release|x64
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Release|x64.Build.0 = Release|x64
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Release|x86.ActiveCfg = Release|Win32
+		{881A854A-216F-43AA-B054-6EB0C989F359}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
