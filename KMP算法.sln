@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "求滑动窗口最大值", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "求前K个高频元素", "求前K个高频元素\求前K个高频元素.vcxproj", "{90AC3362-FF6C-44AD-AEF9-EE9E43212E49}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉树的定义", "二叉树的定义\二叉树的定义.vcxproj", "{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{90AC3362-FF6C-44AD-AEF9-EE9E43212E49}.Release|x64.Build.0 = Release|x64
 		{90AC3362-FF6C-44AD-AEF9-EE9E43212E49}.Release|x86.ActiveCfg = Release|Win32
 		{90AC3362-FF6C-44AD-AEF9-EE9E43212E49}.Release|x86.Build.0 = Release|Win32
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Debug|x64.ActiveCfg = Debug|x64
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Debug|x64.Build.0 = Debug|x64
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Debug|x86.ActiveCfg = Debug|Win32
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Debug|x86.Build.0 = Debug|Win32
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Release|x64.ActiveCfg = Release|x64
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Release|x64.Build.0 = Release|x64
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Release|x86.ActiveCfg = Release|Win32
+		{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
