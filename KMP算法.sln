@@ -21,7 +21,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "求前K个高频元素", "�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉树的定义", "二叉树的定义\二叉树的定义.vcxproj", "{38CE6BBE-1436-4CDA-BFAC-7798D3E940C1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉树的递归遍历", "二叉树的递归遍历\二叉树的递归遍历.vcxproj", "{D6BAB72A-135E-47C7-84CB-3A2DD30405A0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉树的递归遍历与递归构建", "二叉树的递归遍历\二叉树的递归遍历.vcxproj", "{D6BAB72A-135E-47C7-84CB-3A2DD30405A0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉树的非递归遍历", "二叉树的非递归遍历\二叉树的非递归遍历.vcxproj", "{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉树的层序遍历", "二叉树的层序遍历\二叉树的层序遍历.vcxproj", "{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,22 @@ Global
 		{D6BAB72A-135E-47C7-84CB-3A2DD30405A0}.Release|x64.Build.0 = Release|x64
 		{D6BAB72A-135E-47C7-84CB-3A2DD30405A0}.Release|x86.ActiveCfg = Release|Win32
 		{D6BAB72A-135E-47C7-84CB-3A2DD30405A0}.Release|x86.Build.0 = Release|Win32
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Debug|x64.ActiveCfg = Debug|x64
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Debug|x64.Build.0 = Debug|x64
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Debug|x86.Build.0 = Debug|Win32
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Release|x64.ActiveCfg = Release|x64
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Release|x64.Build.0 = Release|x64
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Release|x86.ActiveCfg = Release|Win32
+		{63A6531C-F4D3-48C4-BDF2-1BD6EB5572BA}.Release|x86.Build.0 = Release|Win32
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Debug|x64.ActiveCfg = Debug|x64
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Debug|x64.Build.0 = Debug|x64
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Debug|x86.ActiveCfg = Debug|Win32
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Debug|x86.Build.0 = Debug|Win32
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Release|x64.ActiveCfg = Release|x64
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Release|x64.Build.0 = Release|x64
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Release|x86.ActiveCfg = Release|Win32
+		{FA13D76D-E2FA-4C94-BC63-AF606C1A68D6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
