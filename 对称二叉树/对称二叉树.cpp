@@ -1,6 +1,5 @@
-﻿// 二叉树的层序遍历.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-// leetcode102
-
+﻿// 对称二叉树.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// 
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -9,7 +8,7 @@
 using namespace std;
 /*二叉树的定义*/
 template<typename T>
-class TreeNode 
+class TreeNode
 {
 public:
     T val;
@@ -22,14 +21,14 @@ public:
 
 /*前序数组构造二叉树 中——左——右*/
 template<typename T>
-TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder, int& index) 
+TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder, int& index)
 {
     if (index >= preorder.size() || preorder[index] == T('\0'))
     {
         index++;
         return nullptr;
     }
-    TreeNode<T> * node = new TreeNode<T>(preorder[index]);
+    TreeNode<T>* node = new TreeNode<T>(preorder[index]);
     index++;
     node->left = bulidTreeFromPreorder(preorder, index);
     node->right = bulidTreeFromPreorder(preorder, index);
@@ -37,63 +36,31 @@ TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder, int& index)
 }
 /*前序数组构造二叉树 中——左——右*/
 template<typename T>
-TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder) 
+TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder)
 {
     int index = 0;
     return bulidTreeFromPreorder(preorder, index);
 }
 
-
 template<typename T>
 class Solution {
 public:
-    void order(TreeNode<T>* cur, vector<vector<T>>& result, int depth)
+    bool isSymmetric(TreeNode<T>* root) {
+
+    }
+    /*后序遍历二叉树*/
+    void laterorderTraversal(TreeNode<T>* cur ,vector<T> &vec)
     {
-        if (cur == nullptr) return;
-        if (result.size() == depth) result.push_back(vector<T>());
-        result[depth].push_back(cur->val);
-        order(cur->left, result, depth + 1);
-        order(cur->right, result, depth + 1);
+        if (cur == nullptr)return;
+        laterorderTraversal(cur->left, vec);
+        laterorderTraversal(cur->right, vec);
+        vec.push_back(cur->val);
     }
-    vector<vector<T>> levelOrder(TreeNode<T>* root) {
-        vector<vector<T>> result;
-        int depth = 0;
-        order(root, result, depth);
-        return result;
-    }
-};
-
-
-template<typename T>
-class Solution2 {
-public:
-    /*非递归实现二叉树层序遍历(类似与图的广度优先搜索)*/
-    vector<vector<T>> levelOrder(TreeNode<T>* root) {
-        queue<TreeNode<T>*> que;
-        if (root!=nullptr) 
-        {
-            que.push(root);
-        }
-        vector<vector<T>> result;
-        while (!que.empty()) 
-        {
-            int size = que.size();
-            vector<T> vec;
-            while (size--)
-            {
-                TreeNode<T>* node = que.front();
-                que.pop();
-                vec.push_back(node->val);
-                if (node->left != nullptr) {
-                    que.push(node->left);
-                }
-                if (node->right != nullptr) 
-                {
-                    que.push(node->right);
-                }
-            }
-            result.push_back(vec);
-        }
+    /*后序遍历二叉树*/
+    vector<T> laterorderTraversal(TreeNode<T>* cur) 
+    {
+        vector<T> result;
+        laterorderTraversal(cur, result);
         return result;
     }
 };
@@ -102,8 +69,9 @@ int main()
 {
     std::vector<char> preorder = { '6', '4','1','\0','\0','3','\0','\0','7','5','\0','\0','8' };
     TreeNode<char>* root = bulidTreeFromPreorder(preorder);
-    Solution2<char> S;
-    vector<vector<char>> result = S.levelOrder(root);
+    Solution<char> S;
+    vector<char> result = S.laterorderTraversal(root);
+    std::cout << "Hello World!\n";
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
