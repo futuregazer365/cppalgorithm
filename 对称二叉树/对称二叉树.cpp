@@ -45,8 +45,21 @@ TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder)
 template<typename T>
 class Solution {
 public:
+    /*递归判断二叉树是否为对称二叉树*/
     bool isSymmetric(TreeNode<T>* root) {
-
+        TreeNode<T>* left = root->left;
+        TreeNode<T>* right = root->right;
+        return compare(right, left);
+    }
+    bool compare(TreeNode<T>* left, TreeNode<T>* right) 
+    {
+        if (left == nullptr && right != nullptr)return false;
+        else if (left != nullptr && right == nullptr)return false;
+        else if (left == nullptr && right == nullptr)return true;
+        else if (left->val != right->val)return false;
+        bool outside = compare(left->left, right->right);
+        bool inside = compare(left->right, right->left);
+        return outside && inside;
     }
     /*后序遍历二叉树*/
     void laterorderTraversal(TreeNode<T>* cur ,vector<T> &vec)
@@ -63,14 +76,36 @@ public:
         laterorderTraversal(cur, result);
         return result;
     }
+    /*反转二叉树*/
+    TreeNode<T>* invertTree(TreeNode<T>* node)
+    {
+        if (node == nullptr)return node;
+        swap(node->left, node->right);
+        invertTree(node->left);
+        invertTree(node->right);
+        return node;
+    }
 };
 
 int main()
 {
-    std::vector<char> preorder = { '6', '4','1','\0','\0','3','\0','\0','7','5','\0','\0','8' };
+    std::vector<char> preorder = { '1', '2','2','\0','\0','\0','2','\0','3','\0','\0','\0' };
     TreeNode<char>* root = bulidTreeFromPreorder(preorder);
-    Solution<char> S;
+    TreeNode<char>* root2 = bulidTreeFromPreorder(preorder);
+    Solution<char> S;    
+    TreeNode<char>* invertedTree = S.invertTree(root2);
     vector<char> result = S.laterorderTraversal(root);
+    vector<char> result2 = S.laterorderTraversal(root2);
+    //通过判断反转后的二叉树是否和原二叉树相等判断是否为对称二叉树
+    if (result == result2) 
+    {
+        std::cout << "是对称二叉树"<<endl;
+    }
+    else 
+    {
+        std::cout << "不是对称二叉树" << endl;
+    }
+    bool compare = S.isSymmetric(root);
     std::cout << "Hello World!\n";
 }
 
