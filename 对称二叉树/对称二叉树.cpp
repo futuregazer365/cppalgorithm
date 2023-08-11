@@ -85,6 +85,17 @@ public:
         invertTree(node->right);
         return node;
     }
+    /*自己又写了一边用于加深印象*/
+    bool compare(TreeNode<T>* left, TreeNode<T>right) 
+    {
+        if (left == nullptr && right != nullptr)return false;
+        else if (left != nullptr && right == nullptr)return false;
+        else if (left == nullptr && right == nullptr)return true;
+        else if (left->val != right->val)return false;
+        bool outside = compare(left->left, right->right);
+        bool inside = compare(left->right, right->left);
+        return outside && inside;
+    }
 };
 
 int main()
@@ -105,6 +116,7 @@ int main()
     {
         std::cout << "不是对称二叉树" << endl;
     }
+    //使用递归判断
     bool compare = S.isSymmetric(root);
     std::cout << "Hello World!\n";
 }
