@@ -59,13 +59,42 @@ public:
         count++;
         middletraversal(node->right, count);
     }
+    /*后序遍历二叉树*/
+    int getNum(TreeNode<T>* node) 
+    {
+        if (node == nullptr) return 0;
+        int left = getNum(node->left);
+        int right = getNum(node->right);
+        return left + right + 1;
+    }
+    /*利用满二叉树性质*/
+    int countNodesV2(TreeNode<T>* root) {
+        if (root == nullptr) return 0;
+        TreeNode<T>* left = root->left;
+        TreeNode<T>* right = root->right;
+        int leftDepth = 0, rightDepth = 0; // 这里初始为0是有目的的，为了下面求指数方便
+        while (left) {  // 求左子树深度
+            left = left->left;
+            leftDepth++;
+        }
+        while (right) { // 求右子树深度
+            right = right->right;
+            rightDepth++;
+        }
+        if (leftDepth == rightDepth) {
+            return (2 << leftDepth) - 1; // 注意(2<<1) 相当于2^2，所以leftDepth初始为0
+        }
+        return countNodes(root->left) + countNodes(root->right) + 1;
+    }
 };
 int main()
 {
-    std::vector<char> preorder = { '1', '2','2','\0','\0','\0','2','\0','3','\0','\0','\0' };
+    std::vector<char> preorder = { '1', '2','3','4','5'};
     TreeNode<char>* root = bulidTreeFromPreorder(preorder);
     Solution<char> S;
     int count = S.countNodes(root);
+    int count2 = S.getNum(root);
+    int count3 = S.countNodesV2(root);
     std::cout << "Hello World!\n";
 }
 

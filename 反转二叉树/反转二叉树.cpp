@@ -45,13 +45,23 @@ TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder)
 template<typename T>
 class Solution {
 public:
-    TreeNode<T>* invertTree(TreeNode<T>* root) {
+    /*前序遍历*/
+    TreeNode<T>* preorderinvertTree(TreeNode<T>* root) {
         if (root == nullptr)return root;
         TreeNode<T> *temp = root->left;
         root->left = root->right;
         root->right = temp;
         invertTree(root->left);
         invertTree(root->right);
+        return root;
+    }
+    TreeNode<T>* laterorderinvertTree(TreeNode<T>* root) {
+        if (root == nullptr)return root;
+        invertTree(root->left);
+        invertTree(root->right);
+        TreeNode<T>* temp = root->left;
+        root->left = root->right;
+        root->right = temp;
         return root;
     }
     
@@ -61,7 +71,7 @@ int main()
     std::vector<char> preorder = { '6', '4','1','\0','\0','3','\0','\0','7','5','\0','\0','8' };
     TreeNode<char>* root = bulidTreeFromPreorder(preorder);
     Solution<char> s;
-    root = s.invertTree(root);
+    root = s.preorderinvertTree(root);
     std::cout << "Hello World!\n";
 }
 
