@@ -1,12 +1,9 @@
-﻿// 平衡二叉树.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-// leetcode 110
-
-#include <iostream>
+﻿// 左子树之和.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
 #include <iostream>
 #include <vector>
 #include <stack>
 #include <algorithm>
-#include <queue>
 using namespace std;
 /*二叉树的定义*/
 template<typename T>
@@ -14,18 +11,17 @@ class TreeNode
 {
 public:
     T val;
-    TreeNode<T>* left;
-    TreeNode<T>* right;
-    TreeNode() :val(), left(), right() {};
-    TreeNode(T _val) :val(_val), left(), right() {};
-    TreeNode(T _val, TreeNode<T>* _left, TreeNode<T>* _right) :val(_val), left(_left), right(_right) {};
-};
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode() :left(nullptr), right(nullptr) {};
+    TreeNode(T _val) :val(_val), left(nullptr), right(nullptr) {};
+    TreeNode(T _val, TreeNode* _left, TreeNode* _right) :val(_val), left(_left), right(_right) {};
 
-/*前序数组构造二叉树 中——左——右*/
+};
 template<typename T>
 TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder, int& index)
 {
-    if (index >= preorder.size() || preorder[index] == T('\0'))
+    if (index >= preorder.size() || preorder[index] == T(0))
     {
         index++;
         return nullptr;
@@ -36,9 +32,9 @@ TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder, int& index)
     node->right = bulidTreeFromPreorder(preorder, index);
     return node;
 }
-/*前序数组构造二叉树 中——左——右*/
+/*前序数组构造二叉树*/
 template<typename T>
-TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder)
+TreeNode<T>* buildTreeFromPreorder(const std::vector<T>& preorder)
 {
     int index = 0;
     return bulidTreeFromPreorder(preorder, index);
@@ -46,31 +42,28 @@ TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder)
 template<typename T>
 class Solution {
 public:
-    /*是否是平衡二叉树，左右子树高度差小于等于一*/
-    bool isBalanced(TreeNode<T>* root) {
-        if (isChildernBalanced(root) == -1)return false;
-        else
-        {
-            return true;
-        }
+    int sumOfLeftLeaves(TreeNode<T>* root) {
+        return laterordertraversal(root);
     }
-    int isChildernBalanced(TreeNode<T>* node) 
+    int laterordertraversal(TreeNode<T>* node) 
     {
         if (node == nullptr)return 0;
-        int leftheight = isChildernBalanced(node->left);
-        if (leftheight == -1)return -1;
-        int rightheight = isChildernBalanced(node->right);
-        if (rightheight == -1)return -1;
-        if (abs(leftheight - rightheight) > 1)return-1;
-        else
+        int left = laterordertraversal(node->left);
+        if (node->left != nullptr && node->left->left == nullptr && node->left->right == nullptr) 
         {
-            return max(leftheight, rightheight) + 1;
+            left += node->left->val;
         }
+        int right = laterordertraversal(node->right);
+        return left + right;
+        
     }
 };
-
 int main()
 {
+    std::vector<int> preorder = { 1,4,8,0,0,3,0,0,5,6,0,0,12 };
+    TreeNode<int>* root = buildTreeFromPreorder(preorder);
+    Solution<int> s;
+    int result = s.sumOfLeftLeaves(root);
     std::cout << "Hello World!\n";
 }
 
