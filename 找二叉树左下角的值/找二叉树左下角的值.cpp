@@ -1,5 +1,5 @@
-﻿// 左子树之和.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-// leetcode 404 
+﻿// 找二叉树左下角的值.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -22,7 +22,7 @@ public:
 template<typename T>
 TreeNode<T>* bulidTreeFromPreorder(const std::vector<T>& preorder, int& index)
 {
-    if (index >= preorder.size() || preorder[index] == T(0))
+    if (index >= preorder.size() || preorder[index] == T('\0'))
     {
         index++;
         return nullptr;
@@ -40,31 +40,54 @@ TreeNode<T>* buildTreeFromPreorder(const std::vector<T>& preorder)
     int index = 0;
     return bulidTreeFromPreorder(preorder, index);
 }
+
 template<typename T>
 class Solution {
 public:
-    int sumOfLeftLeaves(TreeNode<T>* root) {
-        return laterordertraversal(root);
-    }
-    int laterordertraversal(TreeNode<T>* node) 
-    {
-        if (node == nullptr)return 0;
-        int left = laterordertraversal(node->left);
-        if (node->left != nullptr && node->left->left == nullptr && node->left->right == nullptr) 
+    int findBottomLeftValue(TreeNode<T>* root) {
+        if (root != nullptr) 
         {
-            left += node->left->val;
+            traversal(root, 1);
+            return result;
         }
-        int right = laterordertraversal(node->right);
-        return left + right;
-        
+        else
+        {
+            return 0;
+        }
     }
+    void traversal(TreeNode<T>* node, int depth) 
+    {
+        if (node->left == nullptr && node->right == nullptr) {
+            if (depth > maxDepth) 
+            {
+                maxDepth = depth;
+                result = node->val;
+                return;
+            }
+        }
+        if (node->left != nullptr) 
+        {
+            traversal(node->left,++depth);
+            depth--;        
+        }
+        if (node->right != nullptr) 
+        {
+            traversal(node->right, ++depth);
+            depth--;        
+        }
+
+
+    }
+private:
+    int maxDepth = INT16_MIN;
+    T result;
 };
 int main()
 {
-    std::vector<int> preorder = { 1,4,8,0,0,3,0,0,5,6,0,0,12 };
-    TreeNode<int>* root = buildTreeFromPreorder(preorder);
-    Solution<int> s;
-    int result = s.sumOfLeftLeaves(root);
+    std::vector<char> preorder = { '1', '2','3','4','5' };
+    TreeNode<char>* root = buildTreeFromPreorder(preorder);
+    Solution<char> S;
+    char result = S.findBottomLeftValue(root);
     std::cout << "Hello World!\n";
 }
 

@@ -1,5 +1,5 @@
-﻿// 左子树之和.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-// leetcode 404 
+﻿// 路径总和.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// leetcode 112
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -43,28 +43,44 @@ TreeNode<T>* buildTreeFromPreorder(const std::vector<T>& preorder)
 template<typename T>
 class Solution {
 public:
-    int sumOfLeftLeaves(TreeNode<T>* root) {
-        return laterordertraversal(root);
+    bool hasPathSum(TreeNode<T>* root, int targetSum) {
+        if (root == NULL) return false;
+        return traversal(root, targetSum - (root->val));
     }
-    int laterordertraversal(TreeNode<T>* node) 
+
+    bool traversal(TreeNode<T>* root, int targetSum)
     {
-        if (node == nullptr)return 0;
-        int left = laterordertraversal(node->left);
-        if (node->left != nullptr && node->left->left == nullptr && node->left->right == nullptr) 
+        if (root->left == nullptr && root->right == nullptr && targetSum == 0)
         {
-            left += node->left->val;
+            return true;
         }
-        int right = laterordertraversal(node->right);
-        return left + right;
-        
+        if (root->left == nullptr && root->right == nullptr && targetSum != 0)
+        {
+            return false;
+        }
+        bool l = false; bool r = false;
+        if (root->left)
+        {
+            targetSum -= root->left->val;
+            l = traversal(root->left, targetSum);
+            targetSum += root->left->val;
+        }
+        if (root->right)
+        {
+            targetSum -= root->right->val;
+            r = traversal(root->right, targetSum);
+            targetSum += root->right->val;
+        }
+        return l || r;
     }
 };
+
 int main()
 {
-    std::vector<int> preorder = { 1,4,8,0,0,3,0,0,5,6,0,0,12 };
+    std::vector<int> preorder = { 5,4,11,0,0,0,8,13,0,0,4 };
     TreeNode<int>* root = buildTreeFromPreorder(preorder);
     Solution<int> s;
-    int result = s.sumOfLeftLeaves(root);
+    bool get = s.hasPathSum(root, 20);
     std::cout << "Hello World!\n";
 }
 
