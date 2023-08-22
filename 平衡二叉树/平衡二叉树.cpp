@@ -2,7 +2,6 @@
 // leetcode 110
 
 #include <iostream>
-#include <iostream>
 #include <vector>
 #include <stack>
 #include <algorithm>

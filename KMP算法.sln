@@ -47,6 +47,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "找二叉树左下角的值
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "路径总和", "路径总和\路径总和.vcxproj", "{CFCFD2C8-1627-4A37-93CE-AFEC118D4242}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "从中序与后序遍历数组构建二叉树", "从中序与后序遍历数组构建二叉树\从中序与后序遍历数组构建二叉树.vcxproj", "{880874CF-9903-47A6-B0ED-2E0D2461291A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -231,6 +233,14 @@ Global
 		{CFCFD2C8-1627-4A37-93CE-AFEC118D4242}.Release|x64.Build.0 = Release|x64
 		{CFCFD2C8-1627-4A37-93CE-AFEC118D4242}.Release|x86.ActiveCfg = Release|Win32
 		{CFCFD2C8-1627-4A37-93CE-AFEC118D4242}.Release|x86.Build.0 = Release|Win32
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Debug|x64.ActiveCfg = Debug|x64
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Debug|x64.Build.0 = Debug|x64
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Debug|x86.ActiveCfg = Debug|Win32
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Debug|x86.Build.0 = Debug|Win32
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Release|x64.ActiveCfg = Release|x64
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Release|x64.Build.0 = Release|x64
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Release|x86.ActiveCfg = Release|Win32
+		{880874CF-9903-47A6-B0ED-2E0D2461291A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
