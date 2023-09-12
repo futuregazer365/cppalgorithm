@@ -1,13 +1,155 @@
 ﻿// ACM输入输出.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-
+//#define 一维数组
+//#define 不确定数目的一维数组
+//#define 二维数组
+//#define 字符串
+//#define 给定数目的多字符串
+//#define 不给定数目多字符串
+#define 每一行数据是逗号隔开的整数
+#ifdef 一维数组
 #include <iostream>
-
+#include <vector>
+using namespace std;
 int main()
 {
+    int size;
+    cin >> size;
+    vector<int> vec(size);
+    for (int i = 0; i < size; i++) 
+    {
+        cin >> vec[i];
+    }
     std::cout << "Hello World!\n";
 }
+#endif // 一维数组
 
+#ifdef 不确定数目的一维数组
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() 
+{
+    vector<int> nums;
+    int num;
+    while (cin>>num)
+    {
+        nums.push_back(num);
+        if (getchar() == '\n') 
+        {
+            break;
+        }
+    }
+    std::cout << "Hello World!\n";
+}
+#endif // 不确定数目的一维数组
+
+#ifdef 二维数组
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() 
+{
+    int n, m = 0;
+    cin >> m >> n;
+    vector<vector<int>> mat(m, vector<int>(n));
+    for (int i = 0; i < m; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            cin >> mat[i][j];
+        }
+    }
+    std::cout << "Hello World!\n";
+}
+#endif // 二维数组
+
+#ifdef 字符串
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    string s;
+    cin >> s;
+}
+#endif // 字符串
+
+#ifdef 给定数目的多字符串
+#include <iostream>
+#include <vector>
+#include <stdlib.h>
+using namespace std;
+int main()
+{
+    std::string str = "668";
+    std::cout << atoi(str.c_str());
+    int n = 0;
+    cin >> n;
+    vector<string> strings(n);
+    for (int i = 0; i < n; i++) {
+        cin >> strings[i];
+    }
+    std::cout << "Hello World!\n";
+}
+#endif
+
+#ifdef 不给定数目多字符串
+#include <iostream>
+#include <vector>
+#include <stdlib.h>
+using namespace std;
+int main()
+{
+    vector<string> strings;
+    string str;
+    while (cin >> str) 
+    {
+        strings.push_back(str);
+        if (getchar() == '\n') {
+            break;
+        }
+    }
+    std::cout << "Hello World!\n";
+}
+#endif
+
+#ifdef 每一行数据是逗号隔开的整数
+#include <iostream>
+#include <vector>
+#include <stdlib.h>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+int main()
+{
+    int m;
+    int n;
+    cin >> m >> n;
+    getchar();
+    vector<vector<int>> matrix(m);
+    for (int i = 0; i < m; i++) 
+    {
+        string s;
+        getline(cin, s);
+        vector<int> vec;
+        int p = 0;
+        for (int q = 0; q < s.size(); q++) {
+            p = q;
+            while (s[p] != ',' && p < s.size()) 
+            {
+                p++;
+            }
+            string temp = s.substr(q, p - q);
+            vec.push_back(atoi(temp.c_str()));
+            q = p;
+        }
+        matrix[i] = vec;
+        vec.clear();
+    }
+    std::cout << "Hello World!\n";
+}
+#endif
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
 
