@@ -77,13 +77,15 @@ int main()
 
 #ifdef 给定数目的多字符串
 #include <iostream>
+#include <string>
 #include <vector>
 #include <stdlib.h>
 using namespace std;
 int main()
 {
     std::string str = "668";
-    std::cout << atoi(str.c_str());
+    std::cout << atoi(str.c_str());//字符串转c字符串转int
+    int i = stoi(str);//字符串转int
     int n = 0;
     cin >> n;
     vector<string> strings(n);
@@ -126,7 +128,7 @@ int main()
     int m;
     int n;
     cin >> m >> n;
-    getchar();
+    int i = getchar();
     vector<vector<int>> matrix(m);
     for (int i = 0; i < m; i++) 
     {
@@ -134,7 +136,7 @@ int main()
         getline(cin, s);
         vector<int> vec;
         int p = 0;
-        for (int q = 0; q < s.size(); q++) {
+        for (int q = 0; q < s.size(); q++) {//注意此处的双指针法
             p = q;
             while (s[p] != ',' && p < s.size()) 
             {

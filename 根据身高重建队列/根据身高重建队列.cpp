@@ -1,10 +1,52 @@
 ﻿// 根据身高重建队列.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
+// leetcode 406
 
 #include <iostream>
+#include <vector>
+#include <set>
+#include <algorithm>
+using namespace std;
+class Solution {
+public:
+    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
+        sort(people.begin(), people.end(), compare);
+        vector<vector<int>> result(people.size());
+        for (int i = 0; i < people.size(); i++) 
+        {
+            if (i == 0) { result[0] = people[0]; continue; };
+            if (people[i][1] < i) //前面人太多了
+            {
+                result.insert(result.begin() + people[i][1], people[i]);
+            }
+            else 
+            {
+                result.insert(result.begin() + i, people[i]);
+            }
+            
+        }
+        result.resize(people.size());
+        return result;
+    }
+    static bool compare(vector<int>& p1, vector<int>& p2) 
+    {
+        if (p1[0] > p2[0])return true;
+        if (p1[0] == p2[0]) 
+        {
+            if (p1[1] < p2[1])return true;
+            else
+            {
+                return false;
+            }
+        }
+        if (p1[0] < p2[0])return false;
+    }
+};
 
 int main()
 {
+    Solution S;
+    vector<vector<int>> people{ {7,0},{4,4},{7,1},{5,0},{6,1},{5,2} };
+    vector<vector<int>> result = S.reconstructQueue(people);
     std::cout << "Hello World!\n";
 }
 
