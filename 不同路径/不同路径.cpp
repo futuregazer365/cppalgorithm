@@ -1,33 +1,35 @@
-﻿// 分发饼干.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-// leetcode 455
-#include<algorithm>
-#include<iostream>
-#include<vector>
+﻿// 不同路径.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// leetcode 62 
+
+#include <iostream>
+#include <vector>
 using namespace std;
 class Solution {
 public:
-    int findContentChildren(vector<int>& g, vector<int>& s) {
-        sort(g.begin(), g.end());
-        sort(s.begin(), s.end());
-        int result = 0;
-        int index = s.size() - 1;
-        for (int i = g.size() - 1; i >= 0; i--)
+    int uniquePaths(int m, int n) {
+        vector<vector<int>> dp(m, vector<int>(n));
+        for (int i = 0; i < m; i++)
         {
-            if (index >= 0 && g[i] <= s[index]) {
-                result++;
-                index--;
+            dp[i][0] = 1;
+        }
+        for (int j = 0; j < n; j++) 
+        {
+            dp[0][j] = 1;
+        }
+        for (int i = 1; i < m ; i++) 
+        {
+            for (int j = 1; j < n; j++) 
+            {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
             }
         }
-        return result;
+        return dp[m - 1][n - 1];
     }
-
 };
 int main()
 {
-    vector<int> g = { 1,2,3 };
-    vector<int> s = { 1,1 };
     Solution S;
-    S.findContentChildren(g, s);
+    int result = S.uniquePaths(3, 7);
     std::cout << "Hello World!\n";
 }
 

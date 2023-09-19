@@ -1,33 +1,27 @@
-﻿// 分发饼干.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-// leetcode 455
-#include<algorithm>
-#include<iostream>
-#include<vector>
+﻿// 使用最小花费爬楼梯.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// leetcode 746
+
+#include <iostream>
+#include <vector>
 using namespace std;
 class Solution {
 public:
-    int findContentChildren(vector<int>& g, vector<int>& s) {
-        sort(g.begin(), g.end());
-        sort(s.begin(), s.end());
-        int result = 0;
-        int index = s.size() - 1;
-        for (int i = g.size() - 1; i >= 0; i--)
+    int minCostClimbingStairs(vector<int>& cost) {
+        vector<int> dp(cost.size() + 1);
+        dp[0] = 0;
+        dp[1] = 0;
+        for (int i = 2; i < dp.size(); i++) 
         {
-            if (index >= 0 && g[i] <= s[index]) {
-                result++;
-                index--;
-            }
+            dp[i] = min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
         }
-        return result;
+        return dp[dp.size() - 1];
     }
-
 };
 int main()
 {
-    vector<int> g = { 1,2,3 };
-    vector<int> s = { 1,1 };
     Solution S;
-    S.findContentChildren(g, s);
+    vector<int> cost{ 10,15,20 };
+    int result = S.minCostClimbingStairs(cost);
     std::cout << "Hello World!\n";
 }
 
