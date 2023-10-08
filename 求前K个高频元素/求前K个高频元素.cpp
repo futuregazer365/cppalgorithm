@@ -21,6 +21,10 @@ class Solution
             return lhs.second > rhs.second;
         }
     };
+    static bool cmp(const pair<int, int>& lhs, const pair<int, int>& rhs) {
+        return lhs.second > rhs.second;
+    }
+    bool(*compare)(const pair<int, int>& lhs, const pair<int, int>& rhs) = &cmp;
 public:
 
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -55,13 +59,15 @@ private:
     //参数1：pair<int, int>这是队列中每个元素的类型。在这里，每个元素都是一个存储两个整数的 pair，第一个整数是元素本身，第二个整数是元素的频率。
     //参数2：vector<pair<int, int>> 这是用于存储元素的底层容器类型。在这里，我们选择使用 vector 来存储 pair 类型的元素。
     //参数3：这是一个自定义的比较函数类，用于定义元素的比较规则。
-    priority_queue<pair<int, int>, vector<pair<int, int>>, mycomparison> pri_que;
+    priority_queue < pair<int, int>, vector<pair<int, int>>, mycomparison> pri_que;
 };
 int main()
 {
     vector<int> v = { 2,1,2,1,1,3 };
     Solution S;
     vector<int> result = S.topKFrequent(v, 2);
+    priority_queue<int, vector<int>, less<int>>s;//less表示按照递减(从大到小)的顺序插入元素
+    priority_queue<int, vector<int>, greater<int>>s;//greater表示按照递增（从小到大）的顺序插入元素
     std::cout << "Hello World!\n";
 }
 

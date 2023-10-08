@@ -6,6 +6,7 @@
 //#define 字符串
 //#define 给定数目的多字符串
 //#define 不给定数目多字符串
+#include <algorithm>
 #define 每一行数据是逗号隔开的整数
 #ifdef 一维数组
 #include <iostream>
@@ -125,6 +126,8 @@ int main()
 using namespace std;
 int main()
 {
+    string ss = "123456";
+    string sss = ss.substr(0, 1);
     int m;
     int n;
     cin >> m >> n;
